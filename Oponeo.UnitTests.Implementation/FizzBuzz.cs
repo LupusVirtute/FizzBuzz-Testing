@@ -5,8 +5,12 @@ namespace Oponeo.UnitTests.Implementation
     public class FizzBuzz
     {
 
+
         public string CalculateFizzBuzzForNumber(int integer)
         {
+            if (integer < 1)
+                throw new ArgumentOutOfRangeException(nameof(integer));
+            
             var buffer = string.Empty;
             if (integer % 3 == 0)
             {

@@ -20,6 +20,15 @@ namespace TestFizzBuzz
         }
 
         [TestMethod]
+        [DataRow(-1)]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Expect_Throw_ArgumentOutOfRangeException(int number)
+        {
+            fizzBuzzImplementation.CalculateFizzBuzzForNumber(number);
+            Assert.Fail("An exception should have been thrown");
+        }
+
+        [TestMethod]
         [DataRow(3)]
         public void Expect_Return_Fizz(int number)
         {
